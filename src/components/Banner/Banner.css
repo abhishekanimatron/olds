@@ -1,0 +1,25 @@
+.banner-wrap img {
+  width: 100%;
+  height: 16rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.banner-wrap .banner-title {
+  font-size: 3rem;
+  position: absolute;
+  margin: auto;
+  top: 18%;
+  left: 8%;
+  color: white;
+  letter-spacing: -2px;
+  font-weight: 700;
+  background-color: transparent;
+}
+
+@media (max-width: 768px) {
+  .banner-wrap .banner-title {
+    top: 22%;
+    font-size: 2rem;
+  }
+}
