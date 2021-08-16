@@ -42,6 +42,7 @@ export default function NewsCards() {
           </p>
         </div>
       </div>
+      <div style={{marginBottom:"15vh"}}/>
     </div>
   );
 }
