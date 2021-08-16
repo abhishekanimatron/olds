@@ -11,15 +11,39 @@ const sideDrawer = (props) => {
       <ul>
         <li>
           <a href="/">Home</a>
+          <img
+            src="/icons/arrow-right-circle.svg"
+            alt="arrow"
+            aria-hidden="true"
+            className="right-arrow"
+          />
         </li>
         <li>
-          <a href="/global">Global</a>
+          <a href="/global">Global</a>{" "}
+          <img
+            src="/icons/arrow-right-circle.svg"
+            alt="arrow"
+            aria-hidden="true"
+            className="right-arrow"
+          />
         </li>
         <li>
-          <a href="/saved">Saved</a>
+          <a href="/saved">Saved</a>{" "}
+          <img
+            src="/icons/arrow-right-circle.svg"
+            alt="arrow"
+            aria-hidden="true"
+            className="right-arrow"
+          />
         </li>
         <li>
-          <a href="/others">Others</a>
+          <a href="/others">Others</a>{" "}
+          <img
+            src="/icons/arrow-right-circle.svg"
+            alt="arrow"
+            aria-hidden="true"
+            className="right-arrow"
+          />
         </li>
       </ul>
     </nav>

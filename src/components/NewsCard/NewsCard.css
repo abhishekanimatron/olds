@@ -5,6 +5,9 @@
   gap: 1rem;
   grid-template-columns: auto auto auto;
 }
+.bottom-collapse {
+  margin-bottom: -6rem;
+}
 .news-card {
   padding: 1rem;
   display: flex;

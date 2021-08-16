@@ -2,7 +2,7 @@ import "./NewsCard.css";
 
 export default function NewsCards() {
   return (
-    <div className="card-grid">
+    <div className="card-grid bottom-collapse">
       <div className="news-card">
         <img src="/images/w.png" class="card-image" alt="somenews" />
         <div>
@@ -42,7 +42,7 @@ export default function NewsCards() {
           </p>
         </div>
       </div>
-      <div style={{marginBottom:"15vh"}}/>
+      <div style={{ marginBottom: "15vh" }} />
     </div>
   );
 }
