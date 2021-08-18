@@ -1,25 +1,22 @@
 import { useEffect, useRef } from "react";
 import FooterTab from "../components/FooterTab/FooterTab";
 import Navbar from "../components/Navbar/Navbar";
-import Banner from "../components/Banner/Banner";
-import NewsCards from "../components/NewsCard/NewsCards";
-export default function Home() {
+import Weather from "../components/Weather/Weather";
+// Weather Details
+export default function Weath() {
   const mountedRef = useRef(true);
 
   useEffect(() => {
     // title update
-    document.title = "News - Top Headlines";
+    document.title = "Weather Conditions";
     return () => {
       mountedRef.current = false;
     };
   }, []);
-
   return (
     <div>
       <Navbar />
-      <Banner />
-      <NewsCards />
-      <NewsCards />
+      <Weather />
       <FooterTab />
     </div>
   );

@@ -23,11 +23,11 @@ export default function CategoryCard() {
           </div>
           <div className="category-card col">
             <img
-              src="/images/categories/p.jfif"
+              src="/images/categories/he.jpg"
               class="card-image"
               alt="some-category"
             />
-            <h3 class="card-title">Politics</h3>
+            <h3 class="card-title">Health</h3>
           </div>
           <div className="category-card col">
             <img
@@ -47,11 +47,11 @@ export default function CategoryCard() {
           </div>
           <div className="category-card col">
             <img
-              src="/images/categories/fa.jfif"
+              src="/images/categories/sci.jpg"
               class="card-image"
               alt="some-category"
             />
-            <h3 class="card-title">Fashion</h3>
+            <h3 class="card-title">Science</h3>
           </div>
         </div>
       </div>

@@ -1,11 +1,11 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Router, Route, Switch } from "react-router-dom";
 import { createBrowserHistory } from "history";
 
 import Home from "./screens/Home";
-import Global from "./screens/Global";
-import Saved from "./screens/Saved";
-import Other from "./screens/Other";
+import Category from "./screens/Category";
+import Weath from "./screens/Weath";
+import About from "./screens/About";
 
 function App() {
   const history = createBrowserHistory();
@@ -15,9 +15,9 @@ function App() {
       <Router history={history}>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/global" component={Global} />
-          <Route path="/saved" component={Saved} />
-          <Route path="/others" component={Other} />
+          <Route path="/category" component={Category} />
+          <Route path="/weather" component={Weath} />
+          <Route path="/about" component={About} />
         </Switch>
       </Router>
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./Footer.css";
+// import "./Footer.css";
 export default function FooterTab() {
   return (
     <div>
@@ -10,7 +10,8 @@ export default function FooterTab() {
           position: "fixed",
           bottom: "0",
           left: "0px",
-          background: "rgb(255, 255, 255)",
+          background: "rgb(255, 255, 255,0.9)",
+          backdropFilter: "blur(8px)",
           width: "100%",
           height: "10%",
           color: "rgb(33, 33, 33)",
@@ -52,7 +53,7 @@ export default function FooterTab() {
             </div>
           </div>
         </NavLink>
-        <NavLink to="/global" style={{ textDecoration: "none" }}>
+        <NavLink to="/category" style={{ textDecoration: "none" }}>
           <div
             className="bottomnavnew__NavBtnContainer-zrz7az-1 dXypb"
             style={{
@@ -65,8 +66,8 @@ export default function FooterTab() {
             <img
               id="image-active1"
               style={{ maxWidth: "100%" }}
-              src="/icons/globe.svg"
-              alt="Global"
+              src="/icons/database.svg"
+              alt="category"
             />
             <div
               style={{
@@ -79,11 +80,11 @@ export default function FooterTab() {
               }}
               className="bottomnavnew__NavItem-zrz7az-2 cQGftI"
             >
-              Global
+              Category
             </div>
           </div>
         </NavLink>
-        <NavLink to="/saved" style={{ textDecoration: "none" }}>
+        <NavLink to="/weather" style={{ textDecoration: "none" }}>
           <div
             style={{
               display: "flex",
@@ -96,8 +97,8 @@ export default function FooterTab() {
             <img
               id="image-active2"
               style={{ maxWidth: "100%" }}
-              src="/icons/book.svg"
-              alt="Saved"
+              src="/icons/umbrella.svg"
+              alt="Weather"
             />
             <div
               style={{
@@ -110,11 +111,11 @@ export default function FooterTab() {
               }}
               className="bottomnavnew__NavItem-zrz7az-2 cQGftI"
             >
-              Saved
+              Weather
             </div>
           </div>
         </NavLink>
-        <NavLink to="/others" style={{ textDecoration: "none" }}>
+        <NavLink to="/about" style={{ textDecoration: "none" }}>
           <div
             style={{
               display: "flex",
@@ -127,8 +128,8 @@ export default function FooterTab() {
             <img
               id="image-active3"
               style={{ maxWidth: "100%" }}
-              src="/icons/plus-square.svg"
-              alt="Others"
+              src="/icons/github.svg"
+              alt="About"
             />
             <div
               style={{
@@ -141,7 +142,7 @@ export default function FooterTab() {
               }}
               className="bottomnavnew__NavItem-zrz7az-2 cQGftI"
             >
-              Others
+              About
             </div>
           </div>
         </NavLink>

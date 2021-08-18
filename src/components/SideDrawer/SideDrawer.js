@@ -9,6 +9,10 @@ const sideDrawer = (props) => {
   return (
     <nav className={drawerClasses}>
       <ul>
+        <img src="/images/side.jpg" alt="sidebar" id="sidebar-image" />
+        <div id="sidebar-head">
+          <h3>The News</h3>
+        </div>
         <li>
           <a href="/">Home</a>
           <img
@@ -19,7 +23,7 @@ const sideDrawer = (props) => {
           />
         </li>
         <li>
-          <a href="/global">Global</a>{" "}
+          <a href="/category">Category</a>{" "}
           <img
             src="/icons/arrow-right-circle.svg"
             alt="arrow"
@@ -28,7 +32,7 @@ const sideDrawer = (props) => {
           />
         </li>
         <li>
-          <a href="/saved">Saved</a>{" "}
+          <a href="/weather">Weather</a>{" "}
           <img
             src="/icons/arrow-right-circle.svg"
             alt="arrow"
@@ -37,7 +41,7 @@ const sideDrawer = (props) => {
           />
         </li>
         <li>
-          <a href="/others">Others</a>{" "}
+          <a href="/about">About</a>{" "}
           <img
             src="/icons/arrow-right-circle.svg"
             alt="arrow"
@@ -45,6 +49,7 @@ const sideDrawer = (props) => {
             className="right-arrow"
           />
         </li>
+        <p id="copyright-msg">© Olds Corp. 2021 </p>
       </ul>
     </nav>
   );

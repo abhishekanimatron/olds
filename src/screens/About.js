@@ -1,25 +1,26 @@
 import { useEffect, useRef } from "react";
 import FooterTab from "../components/FooterTab/FooterTab";
 import Navbar from "../components/Navbar/Navbar";
-import Banner from "../components/Banner/Banner";
-import NewsCards from "../components/NewsCard/NewsCards";
-export default function Home() {
+// import Article from "../components/Article/Article";
+import AboutUs from "../components/AboutUs/AboutUs";
+
+export default function About() {
   const mountedRef = useRef(true);
 
   useEffect(() => {
     // title update
-    document.title = "News - Top Headlines";
+    document.title = "About Us";
     return () => {
       mountedRef.current = false;
     };
   }, []);
-
   return (
     <div>
       <Navbar />
-      <Banner />
-      <NewsCards />
-      <NewsCards />
+      {/* <Article /> */}
+
+      <AboutUs />
+
       <FooterTab />
     </div>
   );

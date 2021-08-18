@@ -1,25 +1,22 @@
 import { useEffect, useRef } from "react";
 import FooterTab from "../components/FooterTab/FooterTab";
 import Navbar from "../components/Navbar/Navbar";
-import Banner from "../components/Banner/Banner";
-import NewsCards from "../components/NewsCard/NewsCards";
-export default function Home() {
+import CategoryCard from "../components/CategoryCard/CategoryCard";
+export default function Category() {
   const mountedRef = useRef(true);
 
   useEffect(() => {
     // title update
-    document.title = "News - Top Headlines";
+    document.title = "Categories";
     return () => {
       mountedRef.current = false;
     };
   }, []);
-
   return (
     <div>
       <Navbar />
-      <Banner />
-      <NewsCards />
-      <NewsCards />
+      <h1 style={{ marginTop: "5rem", fontWeight: "100" }}>Categories</h1>
+      <CategoryCard />
       <FooterTab />
     </div>
   );
