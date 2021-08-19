@@ -14,42 +14,42 @@ const sideDrawer = (props) => {
           <h3>The News</h3>
         </div>
         <li>
+          <img
+            src="/icons/home.svg"
+            alt="arrow"
+            aria-hidden="true"
+            className="right-arrow"
+          />
           <a href="/">Home</a>
+        </li>
+        <li>
           <img
-            src="/icons/arrow-right-circle.svg"
+            src="/icons/database.svg"
             alt="arrow"
             aria-hidden="true"
             className="right-arrow"
           />
-        </li>
-        <li>
           <a href="/category">Category</a>{" "}
+        </li>
+        <li>
           <img
-            src="/icons/arrow-right-circle.svg"
+            src="/icons/umbrella.svg"
             alt="arrow"
             aria-hidden="true"
             className="right-arrow"
           />
-        </li>
-        <li>
           <a href="/weather">Weather</a>{" "}
-          <img
-            src="/icons/arrow-right-circle.svg"
-            alt="arrow"
-            aria-hidden="true"
-            className="right-arrow"
-          />
         </li>
         <li>
-          <a href="/about">About</a>{" "}
           <img
-            src="/icons/arrow-right-circle.svg"
+            src="/icons/github.svg"
             alt="arrow"
             aria-hidden="true"
             className="right-arrow"
           />
+          <a href="/about">About</a>{" "}
         </li>
-        <p id="copyright-msg">© Olds Corp. 2021 </p>
+        <p id="copyright-msg">Made With 🖤 by Olds </p>
       </ul>
     </nav>
   );

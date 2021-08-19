@@ -15,7 +15,7 @@ export default function FooterTab() {
           width: "100%",
           height: "10%",
           color: "rgb(33, 33, 33)",
-          zIndex: "9",
+          zIndex: "100",
           padding: "15px 10px 10px",
           borderTop: "1px solid rgb(236, 236, 236)",
           justifyContent: "space-around",

@@ -42,7 +42,6 @@
 .side-drawer li {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   border-bottom: 1px solid #d096ff;
   text-align: left;
   font-weight: 600;
@@ -59,14 +58,15 @@
 }
 
 .side-drawer a {
-  color: #521751;
+  color: #8539ff;
   font-size: 1.2rem;
   text-decoration: none;
+  transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) all;
 }
 
 .side-drawer a:hover,
 .side-drawer a:active {
-  color: #fa923f;
+  color: #eac5ff;
 }
 
 .right-arrow {

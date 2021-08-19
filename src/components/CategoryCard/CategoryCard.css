@@ -14,10 +14,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) all;
 }
 .category-card .card-title {
   position: absolute;
   font-size: 2rem;
+  z-index: 10;
   font-weight: 700;
   top: 1;
   left: 1;
@@ -33,6 +35,73 @@
   filter: saturate(0.2);
   filter: brightness(0.4);
 }
+
+/* HOVER */
+@media (min-width: 992px) {
+  .c-image-wrap {
+    cursor: pointer;
+
+    position: relative;
+    display: inline-block;
+    background: rgb(255, 53, 57);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 53, 57, 1) 0%,
+      rgba(255, 110, 237, 1) 100%
+    );
+  }
+
+  .c-image-wrap:before,
+  .c-image-wrap:after {
+    content: "";
+    display: block;
+    background: rgb(255, 53, 57);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 53, 57, 1) 0%,
+      rgba(255, 110, 237, 1) 100%
+    );
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    transition: all 0.15s ease;
+  }
+
+  .c-image-wrap:before {
+    top: 0;
+    left: 0;
+    transform-origin: top left;
+    transform: rotate(-45deg) scale(0);
+  }
+
+  .c-image-wrap:after {
+    right: 0;
+    bottom: 0;
+    transform-origin: bottom right;
+    transform: rotate(45deg) scale(0);
+  }
+
+  .category-c-image {
+    display: block;
+    transform: translate(0, 0);
+    transition: all 0.15s ease;
+    position: relative;
+    z-index: 10;
+  }
+
+  .c-image-wrap:hover .category-c-image {
+    transform: translate(6px, -6px);
+  }
+
+  .c-image-wrap:hover:before {
+    transform: rotate(-45deg) scale(1);
+  }
+
+  .c-image-wrap:hover:after {
+    transform: rotate(45deg) scale(1);
+  }
+}
+/* RESPONSIVENESS */
 
 @media (max-width: 992px) {
   .card-wrap {
@@ -53,6 +122,11 @@
   .card-image {
     min-width: 15rem;
     height: 10rem;
+  }
+  /* Hover */
+  .category-card:hover {
+    opacity: 0.7;
+    transform: translate(3px, -3px);
   }
 }
 
@@ -77,5 +151,17 @@
     min-width: 12rem;
     max-width: 10rem;
     height: 8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-card .card-title {
+    font-size: 1.2rem;
+    margin-right: 38%;
+  }
+  .card-image {
+    min-width: 10rem;
+    max-width: 8rem;
+    height: 7rem;
   }
 }
