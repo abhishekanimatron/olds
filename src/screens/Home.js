@@ -19,7 +19,6 @@ export default function Home() {
       <Navbar />
       <Banner />
       <NewsCards />
-      <NewsCards />
       <FooterTab />
     </div>
   );

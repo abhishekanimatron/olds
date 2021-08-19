@@ -61,6 +61,7 @@ export default function AboutUs() {
         <br />
         <br /> Qui, quasi sunt.
       </p>
+      <span id="thanks-msg">🤗 Thanks for visiting. 🤗</span>
     </div>
   );
 }

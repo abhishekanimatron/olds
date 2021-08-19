@@ -10,6 +10,7 @@
 }
 #people p {
   font-weight: 200;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s all;
   font-size: 1.2rem;
   letter-spacing: 3px;
 }
@@ -20,11 +21,12 @@
   margin-bottom: 0.8rem;
   width: 10rem;
   border-radius: 20%;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s all;
   box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
 }
 #about-wrap > h1 {
   font-weight: 700;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
 }
 
 #about-desc {
@@ -32,14 +34,34 @@
   font-weight: 500;
   text-align: center;
 }
+#thanks-msg {
+  margin: 2rem 0;
+  font-size: 1.2rem;
+}
 
 .social-icon {
   margin: 2rem 0.5rem;
   padding: 0.5rem;
   border-radius: 42px;
-  background: #ffffff;
+  background: #fff;
   box-shadow: 7px 7px 14px #d9d9d9, -7px -7px 14px #ffffff;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s all;
 }
+/* HOVER */
+.person-image:hover {
+  border-radius: 4px;
+  background: #ddd;
+}
+#people p:hover {
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+.social-icon:hover {
+  border-radius: 4px;
+  background: #ddd;
+}
+
+/* RESPONSIVENESS */
 
 @media (max-width: 768px) {
   #about-wrap {
