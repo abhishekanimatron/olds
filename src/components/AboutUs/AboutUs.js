@@ -7,6 +7,7 @@ export default function AboutUs() {
           <img
             src="/images/about/a.png"
             alt="person x"
+            rel="noreferrer"
             className="person-image"
           />
           <p>Hrithik Goswami</p>
@@ -14,6 +15,7 @@ export default function AboutUs() {
             <a
               href="https://github.com"
               target="_blank"
+              rel="noreferrer"
               className="social-icon"
             >
               <img src="/icons/about/github.svg" alt="github" />
@@ -21,6 +23,7 @@ export default function AboutUs() {
             <a
               href="https://linkedin.com"
               target="_blank"
+              rel="noreferrer"
               className="social-icon"
             >
               <img src="/icons/about/linkedin.svg" alt="linkedin" />
@@ -31,6 +34,7 @@ export default function AboutUs() {
           <img
             src="/images/about/b.jpg"
             alt="person y"
+            rel="noreferrer"
             className="person-image"
           />
           <p>Abhishek Verma</p>
@@ -38,6 +42,7 @@ export default function AboutUs() {
             <a
               href="https://github.com"
               target="_blank"
+              rel="noreferrer"
               className="social-icon"
             >
               <img src="/icons/about/github.svg" alt="github" />
@@ -45,6 +50,7 @@ export default function AboutUs() {
             <a
               href="https://linkedin.com"
               target="_blank"
+              rel="noreferrer"
               className="social-icon"
             >
               <img src="/icons/about/linkedin.svg" alt="linkedin" />

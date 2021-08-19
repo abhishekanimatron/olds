@@ -2,10 +2,9 @@ import { useEffect, useRef } from "react";
 import FooterTab from "../components/FooterTab/FooterTab";
 import Navbar from "../components/Navbar/Navbar";
 import Banner from "../components/Banner/Banner";
-import NewsCards from "../components/NewsCard/NewsCards";
+import {NewsCards} from "../components/NewsCard/NewsCards";
 export default function Home() {
   const mountedRef = useRef(true);
-
   useEffect(() => {
     // title update
     document.title = "News - Top Headlines";
@@ -18,7 +17,6 @@ export default function Home() {
     <div>
       <Navbar />
       <Banner />
-      <NewsCards />
       <NewsCards />
       <FooterTab />
     </div>
