@@ -2,7 +2,6 @@ import "./Weather.css";
 import { useState } from "react";
 export default function Weather() {
   const [location, setLocation] = useState("");
-  const [hintText, setHintText] = useState(false);
   return (
     <div className="content-wrap">
       <img src="/images/weather/cloud.jpg" alt="weather" id="weather-bg" />

@@ -1,0 +1,14 @@
+.bottom-gap {
+  margin-bottom: 6%;
+}
+
+@media (max-width: 992px) {
+  .bottom-gap {
+    margin-bottom: 11%;
+  }
+}
+@media (max-width: 768px) {
+  .bottom-gap {
+    margin-bottom: 16%;
+  }
+}

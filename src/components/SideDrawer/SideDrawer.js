@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./SideDrawer.css";
 const sideDrawer = (props) => {
@@ -13,43 +14,51 @@ const sideDrawer = (props) => {
         <div id="sidebar-head">
           <h3>The News</h3>
         </div>
-        <li>
-          <img
-            src="/icons/home.svg"
-            alt="arrow"
-            aria-hidden="true"
-            className="right-arrow"
-          />
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <img
-            src="/icons/database.svg"
-            alt="arrow"
-            aria-hidden="true"
-            className="right-arrow"
-          />
-          <a href="/category">Category</a>{" "}
-        </li>
-        <li>
-          <img
-            src="/icons/umbrella.svg"
-            alt="arrow"
-            aria-hidden="true"
-            className="right-arrow"
-          />
-          <a href="/weather">Weather</a>{" "}
-        </li>
-        <li>
-          <img
-            src="/icons/github.svg"
-            alt="arrow"
-            aria-hidden="true"
-            className="right-arrow"
-          />
-          <a href="/about">About</a>{" "}
-        </li>
-        <p id="copyright-msg">Made With 🖤 by Olds </p>
+        <Link to="/">
+          <li>
+            <img
+              src="/icons/home.svg"
+              alt="arrow"
+              aria-hidden="true"
+              className="right-arrow"
+            />
+            <p>Home</p>
+          </li>
+        </Link>
+        <Link to="/category">
+          <li>
+            <img
+              src="/icons/database.svg"
+              alt="arrow"
+              aria-hidden="true"
+              className="right-arrow"
+            />
+            <p>Category</p>
+          </li>
+        </Link>
+        <Link to="/weather">
+          <li>
+            <img
+              src="/icons/umbrella.svg"
+              alt="arrow"
+              aria-hidden="true"
+              className="right-arrow"
+            />
+            <p>Weather</p>
+          </li>
+        </Link>
+        <Link to="/about">
+          <li>
+            <img
+              src="/icons/github.svg"
+              alt="arrow"
+              aria-hidden="true"
+              className="right-arrow"
+            />
+            <p>About</p>
+          </li>
+        </Link>
+        <h6 id="copyright-msg">Made With 🖤 by Olds </h6>
       </ul>
     </nav>
   );

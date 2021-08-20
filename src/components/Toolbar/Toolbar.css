@@ -22,14 +22,19 @@
 
 .toolbar__logo {
   margin-left: 1rem;
+  margin-bottom: 0 !important;
 }
 
-.toolbar__logo a {
+.toolbar__logo p {
   color: #222333;
   font-weight: 700;
   letter-spacing: 4px;
   text-decoration: none;
   font-size: 2rem;
+}
+
+.toolbar_navigation-items a {
+  text-decoration: none;
 }
 
 .spacer {
@@ -45,14 +50,15 @@
 .toolbar_navigation-items li {
   padding: 0 0.5rem;
 }
-.toolbar_navigation-items a {
+.toolbar_navigation-items p {
+  margin-bottom: 0;
   color: #222333;
   transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) all;
   text-decoration: none;
 }
 
-.toolbar_navigation-items a:hover,
-.toolbar_navigation-items a:active {
+.toolbar_navigation-items p:hover,
+.toolbar_navigation-items p:active {
   color: #caa1ff;
 }
 

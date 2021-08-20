@@ -40,6 +40,9 @@
   transition: 0.3s ease-in-out all;
   height: 20rem;
 }
+.news-card-image {
+  filter: brightness(1) !important;
+}
 /* Hover effects */
 @media (min-width: 992px) {
   .image-wrap {
@@ -128,6 +131,9 @@
     max-width: 15rem;
     height: 10rem;
   }
+  .news-card-image {
+    border-radius: 6px !important;
+  }
   .news-card .card-subtext {
     -webkit-line-clamp: 3; /* number of lines to show */
   }
@@ -153,6 +159,9 @@
     min-width: 5rem;
     max-width: 5rem;
     height: 8rem;
+  }
+  .news-card-image {
+    border-radius: 2rem 0 !important;
   }
   .news-card .card-subtext {
     margin-left: -2rem;
