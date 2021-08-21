@@ -5,7 +5,7 @@ import {composeWithDevTools} from 'redux-devtools-extension'
 import rootReducer from './reducer'
 
 const initalState = {
-
+    
 }
 
 const middleware = [thunk]
