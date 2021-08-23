@@ -97,6 +97,7 @@ export default function Weather() {
     <div>
       <main>
         <div id="location-search">
+        <h2>Weather</h2>
           <input
             type="text"
             id="location-in"

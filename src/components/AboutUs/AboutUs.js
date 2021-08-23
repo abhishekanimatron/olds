@@ -13,7 +13,7 @@ export default function AboutUs() {
           <p>Hrithik Goswami</p>
           <div id="socials">
             <a
-              href="https://github.com"
+              href="https://github.com/batman005"
               target="_blank"
               rel="noreferrer"
               className="social-icon"
@@ -40,7 +40,7 @@ export default function AboutUs() {
           <p>Abhishek Verma</p>
           <div id="socials">
             <a
-              href="https://github.com"
+              href="https://github.com/abhishekanimatron"
               target="_blank"
               rel="noreferrer"
               className="social-icon"
@@ -60,12 +60,9 @@ export default function AboutUs() {
       </div>
       <h1 id="about-title">About Us</h1>
       <p id="about-desc">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe ipsam
-        ullam in exercitationem placeat corrupti quasi totam sunt voluptatum,
-        debitis doloribus voluptas nostrum hic nobis. Quidem aspernatur cumque
-        dolores alias exercitationem tempore, non nam cupiditate ex quam!
+            This app is developed by us 
         <br />
-        <br /> Qui, quasi sunt.
+        <br /> have a nice day
       </p>
       <span id="thanks-msg">🤗 Thanks for visiting. 🤗</span>
     </div>
