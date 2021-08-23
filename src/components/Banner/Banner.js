@@ -42,7 +42,7 @@ export default function Banner() {
         <p>{quote}</p>
         <span> - {author}</span>
       </div>
-      <h3 className="banner-title">Here are today's Top Headlines</h3>
+      <h3 className="banner-title">Here are Today's Top Headlines</h3>
     </div>
   );
 }

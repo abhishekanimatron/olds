@@ -3,9 +3,12 @@
 body {
   overflow-x: hidden;
   margin: 0;
+  scroll-behavior: smooth;
   font-family: "Barlow Condensed", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: #fae9ff;
 }
 
 code {

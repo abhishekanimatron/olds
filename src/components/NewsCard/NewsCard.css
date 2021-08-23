@@ -8,13 +8,28 @@
 .bottom-collapse {
   margin-bottom: -6rem;
 }
+.loader-wrap {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin-left: 1rem;
+}
+.skeleton-loader {
+  margin: 1rem;
+}
 .news-card {
   padding: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* box-shadow: 7px 7px 14px #d9d9d9, -7px -7px 14px #ffffff; */
   flex-direction: column;
+  margin-bottom: 5rem;
+  /* glass */
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 .news-card .card-title {
   font-size: 1rem;

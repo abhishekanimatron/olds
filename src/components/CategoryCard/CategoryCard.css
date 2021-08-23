@@ -153,6 +153,9 @@
     max-width: 10rem;
     height: 8rem;
   }
+  .category-c-image {
+    border-radius: 2rem 0 !important;
+  }
 }
 
 @media (max-width: 480px) {

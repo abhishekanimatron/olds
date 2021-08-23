@@ -6,6 +6,7 @@ import Home from "./screens/Home";
 import Category from "./screens/Category";
 import Weath from "./screens/Weath";
 import About from "./screens/About";
+import NotFound from "./screens/NotFound";
 // -- CATEGORY WISE
 import Business from "./components/Categories/Business";
 import Entertainment from "./components/Categories/Entertainment";
@@ -30,6 +31,7 @@ function App() {
           <Route path="/tech" component={Tech} />
           <Route path="/sports" component={Sports} />
           <Route path="/health" component={Health} />
+          <Route component={NotFound} />
         </Switch>
       </Router>
     </div>
