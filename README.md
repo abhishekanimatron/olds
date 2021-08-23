@@ -1,17 +1,17 @@
-# The News
+# The News 📰
 
-### A handy pocket-sized News App for newsreaders.
+#### A handy pocket-sized News App for newsreaders.
 
-## Tech Used
+## Tech Used 👨‍💻
 
 <ul>
-- Bootstrap
-- React
-- Redux
-- Axios
-- CSS
-- Node.js
-- Express
-- News API
-- OpenWeather API
+<li> Bootstrap
+<li> React
+<li> Redux
+<li> Axios
+<li> CSS
+<li> Node.js
+<li> Express
+<li> News API
+<li> OpenWeather API
 </ul>
