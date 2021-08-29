@@ -22,7 +22,6 @@
   width: 10rem;
   border-radius: 20%;
   transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s all;
-  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
 }
 #about-wrap > h1 {
   font-weight: 700;

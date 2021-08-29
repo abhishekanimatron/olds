@@ -1,5 +1,5 @@
 import "./Weather.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // weather backgrounds
 import Clear from "../../assets/weather/clear.jpg";
 import Cloud from "../../assets/weather/cloud.jpg";
@@ -25,6 +25,7 @@ const api = {
 export default function Weather() {
   const [query, setQuery] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  //weather from user query
   const [weather, setWeather] = useState({});
 
   const [condition, setCondition] = useState();
@@ -93,11 +94,48 @@ export default function Weather() {
 
     return `${day} ${date} ${month} ${year}`;
   };
+
+  // Weather on firt load without user query
+  const successfulLookup = (position) => {
+    const { latitude, longitude } = position.coords;
+    fetch(
+      `${api.base}weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${api.key}`
+    )
+      .then((response) => response.json())
+      .then((result) => {
+        console.log(result);
+        setWeather(result);
+        setQuery("");
+        try {
+          setCondition(result?.weather[0]?.id);
+        } catch (error) {
+          console.log(error);
+        }
+      });
+  };
+
+  useEffect(() => {
+    const getWeather = () => {
+      try {
+        if (window.navigator.geolocation) {
+          // Geolocation available
+          window.navigator.geolocation.getCurrentPosition(
+            successfulLookup,
+            console.log
+          );
+        }
+      } catch (error) {
+        console.log(error);
+        setErrorMessage(error.message);
+      }
+    };
+    getWeather();
+  }, []);
   return (
     <div>
       <main>
         <div id="location-search">
-        <h2>Weather</h2>
+          <h2>Weather</h2>
           <input
             type="text"
             id="location-in"
@@ -111,14 +149,6 @@ export default function Weather() {
         {typeof weather.main != "undefined" ? (
           errorMessage > 1 ? (
             <div className="content-wrap">
-              <h1>We couldn't track weather for that place. Sorry!</h1>
-              <h1>We couldn't track weather for that place. Sorry!</h1>
-              <h1>We couldn't track weather for that place. Sorry!</h1>
-              <h1>We couldn't track weather for that place. Sorry!</h1>
-              <h1>We couldn't track weather for that place. Sorry!</h1>
-              <h1>We couldn't track weather for that place. Sorry!</h1>
-              <h1>We couldn't track weather for that place. Sorry!</h1>
-              <h1>We couldn't track weather for that place. Sorry!</h1>
               <h1>We couldn't track weather for that place. Sorry!</h1>
             </div>
           ) : (
