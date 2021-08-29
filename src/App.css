@@ -2,16 +2,6 @@
   text-align: center;
 }
 
-.light-mode {
-  background-color: #eeefff;
-  text-align: center;
-  color: #111111;
-}
-.dark-mode {
-  text-align: center;
-  background-color: #111111;
-  color: #eeefff;
-}
 
 .App-logo {
   height: 40vmin;

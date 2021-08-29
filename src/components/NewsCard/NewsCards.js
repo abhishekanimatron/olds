@@ -21,8 +21,8 @@ export const NewsCards = () => {
           <Skeleton
             className="skeleton-loader"
             count={6}
-            width={25 * 16}
-            height={20 * 16}
+            width={20 * 16}
+            height={10 * 16}
           />
         </div>
       ) : error ? (

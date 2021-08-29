@@ -1,5 +1,4 @@
 import "./App.css";
-import { useState } from "react";
 
 import { Router, Route, Switch } from "react-router-dom";
 import { createBrowserHistory } from "history";
@@ -19,10 +18,9 @@ import Health from "./components/Categories/Health";
 
 function App() {
   const history = createBrowserHistory();
-  const [darkMode, setDarkMode] = useState(false);
 
   return (
-    <div className="App" className={darkMode ? "dark-mode" : "light-mode"}>
+    <div className="App" >
       <Router history={history}>
         <Switch>
           <Route exact path="/" component={Home} />
