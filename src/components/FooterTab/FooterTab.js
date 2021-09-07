@@ -2,9 +2,9 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Footer.css";
 export default function FooterTab() {
-  const localLength = 22; // http://localhost:3000/ length
-  // const originalLength = 35; // https://https://oldsss.netlify.app/
-  let currentPage = window.location.href.substr(localLength).toString();
+  // const localLength = 22; // http://localhost:3000/ length
+  const originalLength = 35; // https://https://oldsss.netlify.app/
+  let currentPage = window.location.href.substr(originalLength).toString();
   console.log("current", currentPage);
   return (
     <div>
