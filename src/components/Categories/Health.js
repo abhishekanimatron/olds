@@ -3,9 +3,14 @@ import Navbar from "../Navbar/Navbar";
 import { useEffect, useRef } from "react";
 import Skeleton from "react-loading-skeleton";
 import altImage from "../../assets/alt-image.jpg";
+import { Link } from "react-router-dom";
 import "./CategoriesStyle.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getNewsHealth } from "../../models/actions/useNews";
+
+//animation
+import Aos from "aos";
+import "aos/dist/aos.css";
 export default function Health() {
   const dispatch = useDispatch();
   const healthList = useSelector((state) => state.healthList);
@@ -21,6 +26,7 @@ export default function Health() {
 
   useEffect(() => {
     dispatch(getNewsHealth());
+    Aos.init({ duration: 1000 });
   }, [dispatch]);
   return (
     <div>
@@ -55,19 +61,25 @@ export default function Health() {
           </>
         ) : (
           health.map((n) => (
-            <div className=" news-card" key={n.title}>
-              <div className="image-wrap">
-                <img
-                  src={n.urlToImage || altImage}
-                  className="card-image news-card-image"
-                  alt={altImage}
-                />
+            <Link
+              to={{ pathname: `${n.url}` }}
+              target="_blank"
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <div className=" news-card" key={n.title} data-aos="fade-up">
+                <div className="image-wrap">
+                  <img
+                    src={n.urlToImage || altImage}
+                    className="card-image news-card-image"
+                    alt={altImage}
+                  />
+                </div>
+                <div>
+                  <h5 className="card-title">{n.title}</h5>
+                  <p className="card-subtext">{n.content}</p>
+                </div>
               </div>
-              <div>
-                <h5 className="card-title">{n.title}</h5>
-                <p className="card-subtext">{n.content}</p>
-              </div>
-            </div>
+            </Link>
           ))
         )}
       </div>

@@ -15,12 +15,27 @@ import Science from "./components/Categories/Science";
 import Tech from "./components/Categories/Tech";
 import Sports from "./components/Categories/Sports";
 import Health from "./components/Categories/Health";
+import { CircleLoader } from "react-spinners";
+import { useState, useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
+  const [isLoading, setIsLoading] = useState(true);
   const history = createBrowserHistory();
 
-  return (
-    <div className="App" >
+  return isLoading ? (
+    <div className="App">
+      <div id="loader-style">
+        <CircleLoader color="#772e9e" loading />
+        <h2 style={{ color: "#772e9e", marginTop: "8px" }}>Loading</h2>
+      </div>
+    </div>
+  ) : (
+    <div className="App">
       <Router history={history}>
         <Switch>
           <Route exact path="/" component={Home} />

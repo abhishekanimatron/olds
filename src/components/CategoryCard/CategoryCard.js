@@ -1,13 +1,20 @@
 import "./CategoryCard.css";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 export default function CategoryCard() {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
     <div style={{ overflowX: "hidden", marginRight: "0.5rem" }}>
       <div className="card-wrap container">
         <div className="row row-cols-2">
           <Link to="/business">
-            <div className="category-card col">
+            <div className="category-card col" data-aos="fade-right">
               <div className="c-image-wrap">
                 <img
                   src="/images/categories/b.jpg"
@@ -19,7 +26,7 @@ export default function CategoryCard() {
             </div>
           </Link>
           <Link to="/entertainment">
-            <div className="category-card col">
+            <div className="category-card col" data-aos="fade-right">
               <div className="c-image-wrap">
                 <img
                   src="/images/categories/e.jfif"
@@ -31,7 +38,7 @@ export default function CategoryCard() {
             </div>
           </Link>
           <Link to="/health">
-            <div className="category-card col">
+            <div className="category-card col" data-aos="fade-right">
               <div className="c-image-wrap">
                 <img
                   src="/images/categories/he.jpg"
@@ -43,7 +50,7 @@ export default function CategoryCard() {
             </div>
           </Link>
           <Link to="/sports">
-            <div className="category-card col">
+            <div className="category-card col" data-aos="fade-right">
               <div className="c-image-wrap">
                 <img
                   src="/images/categories/spo.jfif"
@@ -55,7 +62,7 @@ export default function CategoryCard() {
             </div>
           </Link>
           <Link to="/tech">
-            <div className="category-card">
+            <div className="category-card col" data-aos="fade-right">
               <div className="c-image-wrap">
                 <img
                   src="/images/categories/tech.jfif"
@@ -67,7 +74,7 @@ export default function CategoryCard() {
             </div>
           </Link>
           <Link to="/science">
-            <div className="category-card col">
+            <div className="category-card col" data-aos="fade-right">
               <div className="c-image-wrap">
                 <img
                   src="/images/categories/sci.jpg"

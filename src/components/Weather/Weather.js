@@ -16,6 +16,9 @@ import HazeIcon from "../../assets/wIcons/haze.svg";
 import RainyIcon from "../../assets/wIcons/rain.svg";
 import SnowyIcon from "../../assets/wIcons/snow.svg";
 import ThunderIcon from "../../assets/wIcons/thunder.svg";
+//animation
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const api = {
   key: "eb473732e24481d7bac93821748b9733",
@@ -27,6 +30,8 @@ export default function Weather() {
   const [errorMessage, setErrorMessage] = useState("");
   //weather from user query
   const [weather, setWeather] = useState({});
+  // hourly weather
+  // const [hourlyWeather, setHourlyWeather] = useState({});
 
   const [condition, setCondition] = useState();
   // console.log("weather", weather.weather[0].id);
@@ -95,19 +100,21 @@ export default function Weather() {
     return `${day} ${date} ${month} ${year}`;
   };
 
-  // Weather on firt load without user query
+  // Weather on first load without user query
   const successfulLookup = (position) => {
+    // console.log("position", position);
     const { latitude, longitude } = position.coords;
     fetch(
-      `${api.base}weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${api.key}`
+      ` ${api.base}onecall?lat=${latitude}&lon=${longitude}&units=metric&exclude=minutely,daily&appid=${api.key}`
     )
       .then((response) => response.json())
       .then((result) => {
         console.log(result);
-        setWeather(result);
+        // console.log("time", result?.current?.weather[0].id);
+        setWeather(result.current);
         setQuery("");
         try {
-          setCondition(result?.weather[0]?.id);
+          setCondition(result?.current?.weather[0].id);
         } catch (error) {
           console.log(error);
         }
@@ -121,7 +128,7 @@ export default function Weather() {
           // Geolocation available
           window.navigator.geolocation.getCurrentPosition(
             successfulLookup,
-            console.log
+            console.log("Fetching location...")
           );
         }
       } catch (error) {
@@ -130,6 +137,7 @@ export default function Weather() {
       }
     };
     getWeather();
+    Aos.init({ duration: 1000 });
   }, []);
   return (
     <div>
@@ -146,7 +154,7 @@ export default function Weather() {
           />
           {query.length > 0 && <p id="hint-text">Press enter to search.</p>}
         </div>
-        {typeof weather.main != "undefined" ? (
+        {typeof weather.temp != "undefined" ? (
           errorMessage > 1 ? (
             <div className="content-wrap">
               <h1>We couldn't track weather for that place. Sorry!</h1>
@@ -172,9 +180,10 @@ export default function Weather() {
                 })`,
               }}
             >
-              <div className="weather-wrap">
+              <div className="weather-wrap" data-aos="fade-up">
                 <h2 id="weather-place">
-                  {weather.name}, {weather.sys.country}
+                  New Delhi
+                  {/* {weather.name}, {weather.sys.country} */}
                 </h2>
 
                 <h3 id="weather-date">{dateBuilder(new Date())}</h3>
@@ -199,10 +208,10 @@ export default function Weather() {
                     alt="cloud"
                     id="weather-icon"
                   />
-                  <h1 id="weather-degree">{Math.round(weather.main.temp)}</h1>
+                  <h1 id="weather-degree">{Math.round(weather.temp)}</h1>
                   <span id="weather-unit">°C</span>
                 </div>
-                <h2 id="weather-info">{weather.weather[0].main}</h2>
+                <h2 id="weather-info">{weather.weather[0].description}</h2>
               </div>
             </div>
           )

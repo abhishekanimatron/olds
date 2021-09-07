@@ -1,7 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-// import "./Footer.css";
+import "./Footer.css";
 export default function FooterTab() {
+  const localLength = 22; // http://localhost:3000/ length
+  // const originalLength = 35; // https://https://oldsss.netlify.app/
+  let currentPage = window.location.href.substr(localLength).toString();
+  console.log("current", currentPage);
   return (
     <div>
       <div
@@ -34,6 +38,7 @@ export default function FooterTab() {
           >
             <img
               id="image-active"
+              className={currentPage.length !== 0 ? "inactive" : ""}
               style={{ maxWidth: "100%" }}
               src="/icons/home.svg"
               alt="Home"
@@ -65,6 +70,7 @@ export default function FooterTab() {
           >
             <img
               id="image-active1"
+              className={currentPage.length !== 8 ? "inactive" : ""}
               style={{ maxWidth: "100%" }}
               src="/icons/database.svg"
               alt="category"
@@ -96,6 +102,7 @@ export default function FooterTab() {
           >
             <img
               id="image-active2"
+              className={currentPage.length !== 7 ? "inactive" : ""}
               style={{ maxWidth: "100%" }}
               src="/icons/umbrella.svg"
               alt="Weather"
@@ -127,6 +134,7 @@ export default function FooterTab() {
           >
             <img
               id="image-active3"
+              className={currentPage.length !== 5 ? "inactive" : ""}
               style={{ maxWidth: "100%" }}
               src="/icons/github.svg"
               alt="About"
