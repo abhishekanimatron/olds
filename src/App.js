@@ -17,6 +17,7 @@ import Sports from "./components/Categories/Sports";
 import Health from "./components/Categories/Health";
 import { CircleLoader } from "react-spinners";
 import { useState, useEffect } from "react";
+import  ReactGA  from "react-ga4";
 
 function App() {
   useEffect(() => {
@@ -24,6 +25,13 @@ function App() {
       setIsLoading(false);
     }, 2000);
   }, []);
+
+  useEffect(() => {
+    ReactGA.initialize("G-XWCWMMBK60");
+
+    ReactGA.send("pageview");
+  },[]);
+
   const [isLoading, setIsLoading] = useState(true);
   const history = createBrowserHistory();
 
