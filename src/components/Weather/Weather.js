@@ -1,3 +1,4 @@
+
 import "./Weather.css";
 import { useState, useEffect } from "react";
 // weather backgrounds
@@ -26,7 +27,8 @@ const api = {
 };
 
 export default function Weather() {
-  const [query, setQuery] = useState("");
+  // eslint-disable-next-line
+  const [ query,setQuery] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   //weather from user query
   const [weather, setWeather] = useState({});
@@ -44,28 +46,28 @@ export default function Weather() {
   // ? Group 800: Clear
   // ? Group 80x: Clouds
 
-  const search = (evt) => {
-    try {
-      if (evt.key === "Enter") {
-        fetch(`${api.base}weather?q=${query}&units=metric&appid=${api.key}`)
-          .then((res) => res.json())
-          .then((result) => {
-            setWeather(result);
-            setQuery("");
-            try {
-              setCondition(result?.weather[0]?.id);
-            } catch (error) {
-              console.log(error);
-            }
+  // const search = (evt) => {
+  //   try {
+  //     if (evt.key === "Enter") {
+  //       fetch(`${api.base}weather?q=${query}&units=metric&appid=${api.key}`)
+  //         .then((res) => res.json())
+  //         .then((result) => {
+  //           setWeather(result);
+  //           setQuery("");
+  //           try {
+  //             setCondition(result?.weather[0]?.id);
+  //           } catch (error) {
+  //             console.log(error);
+  //           }
 
-            // console.log(result);
-          });
-      }
-    } catch (error) {
-      console.log(error);
-      setErrorMessage(error.message);
-    }
-  };
+  //           // console.log(result);
+  //         });
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //     setErrorMessage(error.message);
+  //   }
+  // };
 
   const dateBuilder = (d) => {
     let months = [
