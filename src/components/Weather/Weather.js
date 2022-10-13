@@ -142,7 +142,7 @@ export default function Weather() {
   return (
     <div>
       <main>
-        <div id="location-search">
+        {/* <div id="location-search">
           <h2>Weather</h2>
           <input
             type="text"
@@ -153,7 +153,7 @@ export default function Weather() {
             onKeyPress={search}
           />
           {query.length > 0 && <p id="hint-text">Press enter to search.</p>}
-        </div>
+        </div> */}
         {typeof weather.temp != "undefined" ? (
           errorMessage > 1 ? (
             <div className="content-wrap">
@@ -181,10 +181,10 @@ export default function Weather() {
               }}
             >
               <div className="weather-wrap" data-aos="fade-up">
-                <h2 id="weather-place">
-                  New Delhi
+                {/* <h2 id="weather-place"/>
+                  India
                   {/* {weather.name}, {weather.sys.country} */}
-                </h2>
+        
 
                 <h3 id="weather-date">{dateBuilder(new Date())}</h3>
 
