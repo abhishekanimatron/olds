@@ -2,8 +2,9 @@
 
 #### A handy pocket-sized News App for newsreaders.
 
-Visit here: https://oldsss.netlify.app/
+Visit here: https://oldsss.netlify.app/  
 
+Disclaimer:- Well herkou server is no longer working in which our proxy server has been deployed.will get back to you as soon possible
 ## Tech Used 👨‍💻
 
 <ul>
