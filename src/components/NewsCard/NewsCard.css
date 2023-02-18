@@ -176,7 +176,7 @@
     height: 8rem;
   }
   .news-card-image {
-    border-radius: 2rem 0 !important;
+    border-radius: 30px  !important;
   }
   .news-card .card-subtext {
     margin-left: -2rem;

@@ -2,6 +2,8 @@
 
 #### A handy pocket-sized News App for newsreaders.
 
+Visit here: https://oldsss.netlify.app/  
+
 ## Tech Used 👨‍💻
 
 <ul>
