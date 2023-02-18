@@ -5,7 +5,7 @@ import { createBrowserHistory } from "history";
 // PAGES
 import Home from "./screens/Home";
 import Category from "./screens/Category";
-import Weath from "./screens/Weath";
+import Climate from "./screens/Climate";
 import About from "./screens/About";
 import NotFound from "./screens/NotFound";
 // -- CATEGORY WISE
@@ -48,7 +48,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/category" component={Category} />
-          <Route path="/weather" component={Weath} />
+          <Route path="/weather" component={Climate} />
           <Route path="/about" component={About} />
           <Route path="/business" component={Business} />
           <Route path="/entertainment" component={Entertainment} />

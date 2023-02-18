@@ -1,4 +1,3 @@
-
 import "./Weather.css";
 import { useState, useEffect } from "react";
 // weather backgrounds
@@ -24,6 +23,7 @@ import "aos/dist/aos.css";
 const api = {
   key: "eb473732e24481d7bac93821748b9733",
   base: "https://api.openweathermap.org/data/2.5/",
+  geo: "https://api.openweathermap.org/geo/1.0/",
 };
 
 export default function Weather() {
@@ -34,17 +34,9 @@ export default function Weather() {
   const [weather, setWeather] = useState({});
   // hourly weather
   // const [hourlyWeather, setHourlyWeather] = useState({});
-
+  const [city, setCity] = useState('');
+  const [country, setCountry] = useState('');
   const [condition, setCondition] = useState();
-  // console.log("weather", weather.weather[0].id);
-  //
-  // ? Group 2xx: Thunderstorm
-  // ? Group 3xx: Drizzle
-  // ? Group 5xx: Rain
-  // ? Group 6xx: Snow
-  // ? Group 7xx: Atmosphere
-  // ? Group 800: Clear
-  // ? Group 80x: Clouds
 
   // const search = (evt) => {
   //   try {
@@ -104,15 +96,25 @@ export default function Weather() {
 
   // Weather on first load without user query
   const successfulLookup = (position) => {
-    // console.log("position", position);
     const { latitude, longitude } = position.coords;
-    fetch(
-      ` ${api.base}onecall?lat=${latitude}&lon=${longitude}&units=metric&exclude=minutely,daily&appid=${api.key}`
-    )
+    const geoUrl = `${api.geo}reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${api.key}`;
+
+    fetch(geoUrl)
+      .then((response) => response.json())
+      .then((geoData) => {
+        const city = geoData[0]?.name || "";
+        const country = geoData[0]?.country || "";
+        setCity(city);
+        setCountry(country);
+      })
+      .catch((error) => {
+        console.log("Error while fetching geolocation data", error);
+      });
+
+    const weatherUrl = `${api.base}onecall?lat=${latitude}&lon=${longitude}&units=metric&exclude=minutely,daily&appid=${api.key}`;
+    fetch(weatherUrl)
       .then((response) => response.json())
       .then((result) => {
-        console.log(result);
-        // console.log("time", result?.current?.weather[0].id);
         setWeather(result.current);
         setQuery("");
         try {
@@ -120,8 +122,12 @@ export default function Weather() {
         } catch (error) {
           console.log(error);
         }
+      })
+      .catch((error) => {
+        console.log("Error while fetching weather data", error);
       });
   };
+
 
   useEffect(() => {
     const getWeather = () => {
@@ -183,13 +189,8 @@ export default function Weather() {
               }}
             >
               <div className="weather-wrap" data-aos="fade-up">
-                {/* <h2 id="weather-place"/>
-                  India
-                  {/* {weather.name}, {weather.sys.country} */}
-        
-
+              <h2 id="weather-place">{city}, {country}</h2>
                 <h3 id="weather-date">{dateBuilder(new Date())}</h3>
-
                 <div id="weather-details">
                   <img
                     src={`${
