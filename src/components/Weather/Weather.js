@@ -1,4 +1,3 @@
-
 import "./Weather.css";
 import { useState, useEffect } from "react";
 // weather backgrounds
@@ -99,7 +98,7 @@ export default function Weather() {
   const successfulLookup = (position) => {
     const { latitude, longitude } = position.coords;
     const geoUrl = `${api.geo}reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${api.key}`;
-  
+
     fetch(geoUrl)
       .then((response) => response.json())
       .then((geoData) => {
@@ -111,7 +110,7 @@ export default function Weather() {
       .catch((error) => {
         console.log("Error while fetching geolocation data", error);
       });
-  
+
     const weatherUrl = `${api.base}onecall?lat=${latitude}&lon=${longitude}&units=metric&exclude=minutely,daily&appid=${api.key}`;
     fetch(weatherUrl)
       .then((response) => response.json())
@@ -128,7 +127,7 @@ export default function Weather() {
         console.log("Error while fetching weather data", error);
       });
   };
-  
+
 
   useEffect(() => {
     const getWeather = () => {
